@@ -91,7 +91,7 @@ BEGIN
     IF NEW.status_pagamento = 'PAGO' THEN
         UPDATE reservas
         SET status_reserva = 'PAGA'
-        WHERE id_reserva = NEW.reserva_id;
+        WHERE id_reserva = NEW.reserva;
     END IF;
 END //
 
