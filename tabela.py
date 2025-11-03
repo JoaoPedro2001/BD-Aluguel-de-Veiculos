@@ -205,7 +205,7 @@ def populate_initial_data():
         session.commit()
 
         print("\n--- População de Dados Concluída! ---")
-        print(f"Categorias: 3 | Atendentes: 2 | Veículos: 3 | Clientes: 2 | Reservas: 1 | Pagamentos: 1 | Manutenções: 1 | Multas: 1")
+        print(f"Categorias: 4 | Atendentes: 4 | Veículos: 5 | Clientes: 5 | Reservas: 1 | Pagamentos: 1 | Manutenções: 1 | Multas: 1")
         print("Banco populado com sucesso!")
 
 if __name__ == '__main__':
