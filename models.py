@@ -134,12 +134,13 @@ class Manutencao(DBModel):
     custo_manutencao:Mapped[float] = mapped_column(Numeric(10,2), nullable=False)
 
     # Chaves estrangeiras:
-    veiculo:Mapped[int] = mapped_column(ForeignKey('veiculos.id_veiculo'))
+    veiculo_id:Mapped[int] = mapped_column(ForeignKey('veiculos.id_veiculo'))
 
     def __init__(self, **kwargs):
         self.data_manutencao = kwargs['data_manutencao']
         self.tipo_manutencao = kwargs['tipo_manutencao']
         self.custo_manutencao = kwargs['custo_manutencao']
+        self.veiculo_id = kwargs['veiculo']
     
 class Multa(DBModel):
     __tablename__ = 'multas'
@@ -149,10 +150,10 @@ class Multa(DBModel):
     status_pagamento:Mapped[str] = mapped_column(String(30), nullable=False)
 
     # Chaves estrangeiras:
-    reserva:Mapped[int] = mapped_column(ForeignKey('reservas.id_reserva'))
+    reserva_id:Mapped[int] = mapped_column(ForeignKey('reservas.id_reserva'))
 
     def __init__(self, **kwargs):
         self.data_multa = kwargs['data_multa']
         self.valor_multa = kwargs['valor_multa']
         self.status_pagamento = kwargs['status_pagamento']
-        self.reserva = kwargs['reserva']
+        self.reserva_id = kwargs['reserva']
