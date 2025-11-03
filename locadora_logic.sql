@@ -67,7 +67,7 @@ BEGIN
         V.placa, 
         V.modelo
     FROM manutencao M
-    JOIN veiculos V ON M.veiculo = V.id_veiculo
+    JOIN veiculos V ON M.veiculo_id = V.id_veiculo
     WHERE M.data_manutencao BETWEEN p_data_inicio AND p_data_fim
     ORDER BY M.data_manutencao DESC;
 END //
