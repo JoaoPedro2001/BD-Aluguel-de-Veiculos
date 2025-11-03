@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker, relationship
 from sqlalchemy.ext.declarative import declarative_base
 
 
-DB_URL = "mysql+pymysql://USUARIO:SENHA@HOST:PORTA/locadora_db"
+DB_URL = " "  # Colocar o endereço dentro das aspas
 engine = create_engine(DB_URL, echo=True)
 Base = declarative_base()
 Session = sessionmaker(bind=engine)
@@ -122,3 +122,5 @@ class LogPrecos(Base):
     preco_novo = Column(Numeric(10, 2))
     data_alteracao = Column(Date)
     usuario = Column(String(50))
+
+Base.metadata.create_all(engine)
